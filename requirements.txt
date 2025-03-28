@@ -1,0 +1,8 @@
+scikit-learn==1.6.1
+matplotlib==3.10.1
+apache-airflow-providers-postgres==5.1.0
+minio == 7.2.0
+
+# everytime add on must run:
+# docker build . --tag extending_airflow:latest
+# docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
