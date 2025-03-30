@@ -2,6 +2,7 @@
 
 ## Project Structure
 
+```
 ai-data-analytics/
 ├── src/                         # Source code directory
 │   ├── agents/                  # Agent definitions and workflows
@@ -37,3 +38,4 @@ ai-data-analytics/
 ├── poetry.lock                  # Dependency lock file (if using Poetry)
 ├── pyproject.toml               # Project configuration (build system, dependencies)
 └── README.md                    # Project documentation and setup instructions
+```
