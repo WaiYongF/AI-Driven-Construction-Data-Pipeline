@@ -1,0 +1,237 @@
+[2025-03-27T08:57:37.031+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T08:57:37.059+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store manual__2025-03-27T06:39:49.677216+00:00 [queued]>
+[2025-03-27T08:57:37.071+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store manual__2025-03-27T06:39:49.677216+00:00 [queued]>
+[2025-03-27T08:57:37.072+0000] {taskinstance.py:2867} INFO - Starting attempt 4 of 6
+[2025-03-27T08:57:37.092+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-27 06:39:49.677216+00:00
+[2025-03-27T08:57:37.100+0000] {standard_task_runner.py:72} INFO - Started process 7448 to run task
+[2025-03-27T08:57:37.107+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'manual__2025-03-27T06:39:49.677216+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmp5k9wb3z4']
+[2025-03-27T08:57:37.112+0000] {standard_task_runner.py:105} INFO - Job 70: Subtask scrape_and_store
+[2025-03-27T08:57:37.184+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store manual__2025-03-27T06:39:49.677216+00:00 [running]> on host c79bd584e644
+[2025-03-27T08:57:37.732+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T06:39:49.677216+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-27T06:39:49.677216+00:00'
+[2025-03-27T08:57:37.734+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T08:57:37.756+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T08:57:57.808+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T08:58:22.362+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T08:58:45.224+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T08:59:02.256+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30769-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30769-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca687c5750>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T08:59:16.832+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T08:59:34.490+0000] {logging_mixin.py:190} INFO - Scraping page 6...
+[2025-03-27T08:59:54.724+0000] {logging_mixin.py:190} INFO - Scraping page 7...
+[2025-03-27T09:00:22.226+0000] {logging_mixin.py:190} INFO - Scraping page 8...
+[2025-03-27T09:00:51.943+0000] {logging_mixin.py:190} INFO - Scraping page 9...
+[2025-03-27T09:01:10.266+0000] {logging_mixin.py:190} INFO - Scraping page 10...
+[2025-03-27T09:01:28.664+0000] {logging_mixin.py:190} INFO - Scraping page 11...
+[2025-03-27T09:01:52.325+0000] {logging_mixin.py:190} INFO - Scraping page 12...
+[2025-03-27T09:02:15.761+0000] {logging_mixin.py:190} INFO - Scraping page 13...
+[2025-03-27T09:02:51.692+0000] {logging_mixin.py:190} INFO - Scraping page 14...
+[2025-03-27T09:03:08.268+0000] {logging_mixin.py:190} INFO - Scraping page 15...
+[2025-03-27T09:03:24.989+0000] {logging_mixin.py:190} INFO - Scraping page 16...
+[2025-03-27T09:03:42.200+0000] {logging_mixin.py:190} INFO - Scraping page 17...
+[2025-03-27T09:04:00.342+0000] {logging_mixin.py:190} INFO - Scraping page 18...
+[2025-03-27T09:04:17.944+0000] {logging_mixin.py:190} INFO - Scraping page 19...
+[2025-03-27T09:04:34.975+0000] {logging_mixin.py:190} INFO - Scraping page 20...
+[2025-03-27T09:04:51.436+0000] {logging_mixin.py:190} INFO - Scraping page 21...
+[2025-03-27T09:05:09.348+0000] {logging_mixin.py:190} INFO - Scraping page 22...
+[2025-03-27T09:05:29.343+0000] {logging_mixin.py:190} INFO - Scraping page 23...
+[2025-03-27T09:05:48.680+0000] {logging_mixin.py:190} INFO - Scraping page 24...
+[2025-03-27T09:06:05.777+0000] {logging_mixin.py:190} INFO - Scraping page 25...
+[2025-03-27T09:06:23.989+0000] {logging_mixin.py:190} INFO - Scraping page 26...
+[2025-03-27T09:06:42.606+0000] {logging_mixin.py:190} INFO - Scraping page 27...
+[2025-03-27T09:07:00.194+0000] {logging_mixin.py:190} INFO - Scraping page 28...
+[2025-03-27T09:07:18.585+0000] {logging_mixin.py:190} INFO - Scraping page 29...
+[2025-03-27T09:07:38.555+0000] {logging_mixin.py:190} INFO - Scraping page 30...
+[2025-03-27T09:07:56.251+0000] {logging_mixin.py:190} INFO - Scraping page 31...
+[2025-03-27T09:08:14.320+0000] {logging_mixin.py:190} INFO - Scraping page 32...
+[2025-03-27T09:08:32.002+0000] {logging_mixin.py:190} INFO - Scraping page 33...
+[2025-03-27T09:08:50.555+0000] {logging_mixin.py:190} INFO - Scraping page 34...
+[2025-03-27T09:09:12.719+0000] {logging_mixin.py:190} INFO - Scraping page 35...
+[2025-03-27T09:09:32.367+0000] {logging_mixin.py:190} INFO - Scraping page 36...
+[2025-03-27T09:09:52.789+0000] {logging_mixin.py:190} INFO - Scraping page 37...
+[2025-03-27T09:10:15.217+0000] {logging_mixin.py:190} INFO - Scraping page 38...
+[2025-03-27T09:10:33.212+0000] {logging_mixin.py:190} INFO - Scraping page 39...
+[2025-03-27T09:10:48.743+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20209-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20209-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca689865c0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:11:29.566+0000] {logging_mixin.py:190} INFO - Scraping page 40...
+[2025-03-27T09:11:55.486+0000] {logging_mixin.py:190} INFO - Scraping page 41...
+[2025-03-27T09:12:27.720+0000] {logging_mixin.py:190} INFO - Scraping page 42...
+[2025-03-27T09:12:45.365+0000] {logging_mixin.py:190} INFO - Scraping page 43...
+[2025-03-27T09:13:04.719+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20143-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20143-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68a8c6a0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:13:20.248+0000] {logging_mixin.py:190} INFO - Scraping page 44...
+[2025-03-27T09:14:13.572+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20122-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20122-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68c7a920>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:14:19.939+0000] {logging_mixin.py:190} INFO - Scraping page 45...
+[2025-03-27T09:14:48.024+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20106-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20106-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca6892ba00>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:14:55.403+0000] {logging_mixin.py:190} INFO - Scraping page 46...
+[2025-03-27T09:15:32.504+0000] {logging_mixin.py:190} INFO - Scraping page 47...
+[2025-03-27T09:16:01.344+0000] {logging_mixin.py:190} INFO - Scraping page 48...
+[2025-03-27T09:16:34.462+0000] {logging_mixin.py:190} INFO - Scraping page 49...
+[2025-03-27T09:16:58.009+0000] {logging_mixin.py:190} INFO - Scraping page 50...
+[2025-03-27T09:17:20.854+0000] {logging_mixin.py:190} INFO - Scraping page 51...
+[2025-03-27T09:17:40.551+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20021-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20021-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68b847c0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:17:46.501+0000] {logging_mixin.py:190} INFO - Scraping page 52...
+[2025-03-27T09:18:03.672+0000] {logging_mixin.py:190} INFO - Scraping page 53...
+[2025-03-27T09:18:24.721+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=53 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 172, in run_scraper
+    current_headers, rows = scrape_page(page_number)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 131, in scrape_page
+    response = requests.get(url)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=53 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-03-27T09:18:24.741+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=manual__2025-03-27T06:39:49.677216+00:00, execution_date=20250327T063949, start_date=20250327T085737, end_date=20250327T091824
+[2025-03-27T09:18:24.786+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T09:18:24.787+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 70 for task scrape_and_store (HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=53 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused')); 7448)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=53 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 172, in run_scraper
+    current_headers, rows = scrape_page(page_number)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 131, in scrape_page
+    response = requests.get(url)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=53 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca68d07e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-03-27T09:18:24.834+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-27T09:18:24.858+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T09:18:24.862+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

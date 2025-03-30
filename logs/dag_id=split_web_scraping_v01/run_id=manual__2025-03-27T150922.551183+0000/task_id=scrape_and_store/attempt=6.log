@@ -1,0 +1,350 @@
+[2025-03-28T03:20:55.799+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-28T03:20:55.854+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [queued]>
+[2025-03-28T03:20:55.880+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [queued]>
+[2025-03-28T03:20:55.883+0000] {taskinstance.py:2867} INFO - Starting attempt 6 of 6
+[2025-03-28T03:20:55.936+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-27 15:09:22.551183+00:00
+[2025-03-28T03:20:55.947+0000] {standard_task_runner.py:72} INFO - Started process 23360 to run task
+[2025-03-28T03:20:55.958+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'split_web_scraping_v01', 'scrape_and_store', 'manual__2025-03-27T15:09:22.551183+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/split_web_scraping.py', '--cfg-path', '/tmp/tmp_v_xhjhh']
+[2025-03-28T03:20:55.966+0000] {standard_task_runner.py:105} INFO - Job 82: Subtask scrape_and_store
+[2025-03-28T03:20:56.076+0000] {task_command.py:467} INFO - Running <TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [running]> on host c79bd584e644
+[2025-03-28T03:20:56.219+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='split_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T15:09:22.551183+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-27T15:09:22.551183+00:00'
+[2025-03-28T03:20:56.221+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-28T03:20:56.259+0000] {logging_mixin.py:190} INFO - Processing batch 1: pages 1 to 10
+[2025-03-28T03:20:56.261+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-28T03:21:12.967+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-28T03:21:31.970+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-28T03:21:52.711+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-28T03:22:10.151+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-28T03:22:27.013+0000] {logging_mixin.py:190} INFO - Scraping page 6...
+[2025-03-28T03:22:44.173+0000] {logging_mixin.py:190} INFO - Scraping page 7...
+[2025-03-28T03:23:02.465+0000] {logging_mixin.py:190} INFO - Scraping page 8...
+[2025-03-28T03:23:19.816+0000] {logging_mixin.py:190} INFO - Scraping page 9...
+[2025-03-28T03:23:37.749+0000] {logging_mixin.py:190} INFO - Scraping page 10...
+[2025-03-28T03:23:54.885+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-28T03:23:54.966+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30926-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+
+[10 rows x 11 columns]
+[2025-03-28T03:23:54.987+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250328_batch_1_pages_1_10.csv
+[2025-03-28T03:23:55.146+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250328_batch_1_pages_1_10.csv to minio://construction-web-scraping/teduh/construction_20250328_batch_1_pages_1_10.csv
+[2025-03-28T03:23:55.149+0000] {logging_mixin.py:190} INFO - Batch 1 processed with 250 rows.
+[2025-03-28T03:23:55.169+0000] {logging_mixin.py:190} INFO - Processing batch 2: pages 11 to 20
+[2025-03-28T03:23:55.170+0000] {logging_mixin.py:190} INFO - Scraping page 11...
+[2025-03-28T03:24:13.721+0000] {logging_mixin.py:190} INFO - Scraping page 12...
+[2025-03-28T03:24:30.529+0000] {logging_mixin.py:190} INFO - Scraping page 13...
+[2025-03-28T03:24:48.448+0000] {logging_mixin.py:190} INFO - Scraping page 14...
+[2025-03-28T03:25:05.257+0000] {logging_mixin.py:190} INFO - Scraping page 15...
+[2025-03-28T03:25:22.849+0000] {logging_mixin.py:190} INFO - Scraping page 16...
+[2025-03-28T03:25:40.453+0000] {logging_mixin.py:190} INFO - Scraping page 17...
+[2025-03-28T03:25:58.453+0000] {logging_mixin.py:190} INFO - Scraping page 18...
+[2025-03-28T03:26:17.002+0000] {logging_mixin.py:190} INFO - Scraping page 19...
+[2025-03-28T03:26:35.268+0000] {logging_mixin.py:190} INFO - Scraping page 20...
+[2025-03-28T03:26:53.076+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-28T03:26:53.127+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  251  ...  https://teduh.kpkt.gov.my/project-swasta/30561-1
+1  252  ...  https://teduh.kpkt.gov.my/project-swasta/30560-1
+2  253  ...  https://teduh.kpkt.gov.my/project-swasta/30559-1
+3  254  ...  https://teduh.kpkt.gov.my/project-swasta/30558-1
+4  255  ...  https://teduh.kpkt.gov.my/project-swasta/30557-1
+5  256  ...  https://teduh.kpkt.gov.my/project-swasta/30555-1
+6  257  ...  https://teduh.kpkt.gov.my/project-swasta/30552-2
+7  258  ...  https://teduh.kpkt.gov.my/project-swasta/30552-1
+8  259  ...  https://teduh.kpkt.gov.my/project-swasta/30550-1
+9  260  ...  https://teduh.kpkt.gov.my/project-swasta/30549-1
+
+[10 rows x 11 columns]
+[2025-03-28T03:26:53.135+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250328_batch_2_pages_11_20.csv
+[2025-03-28T03:26:53.297+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250328_batch_2_pages_11_20.csv to minio://construction-web-scraping/teduh/construction_20250328_batch_2_pages_11_20.csv
+[2025-03-28T03:26:53.299+0000] {logging_mixin.py:190} INFO - Batch 2 processed with 250 rows.
+[2025-03-28T03:26:53.322+0000] {logging_mixin.py:190} INFO - Processing batch 3: pages 21 to 30
+[2025-03-28T03:26:53.326+0000] {logging_mixin.py:190} INFO - Scraping page 21...
+[2025-03-28T03:27:11.603+0000] {logging_mixin.py:190} INFO - Scraping page 22...
+[2025-03-28T03:27:29.004+0000] {logging_mixin.py:190} INFO - Scraping page 23...
+[2025-03-28T03:27:46.428+0000] {logging_mixin.py:190} INFO - Scraping page 24...
+[2025-03-28T03:28:03.617+0000] {logging_mixin.py:190} INFO - Scraping page 25...
+[2025-03-28T03:28:21.324+0000] {logging_mixin.py:190} INFO - Scraping page 26...
+[2025-03-28T03:28:38.977+0000] {logging_mixin.py:190} INFO - Scraping page 27...
+[2025-03-28T03:28:57.061+0000] {logging_mixin.py:190} INFO - Scraping page 28...
+[2025-03-28T03:29:14.276+0000] {logging_mixin.py:190} INFO - Scraping page 29...
+[2025-03-28T03:29:32.037+0000] {logging_mixin.py:190} INFO - Scraping page 30...
+[2025-03-28T03:29:49.499+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-28T03:29:49.551+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  501  ...  https://teduh.kpkt.gov.my/project-swasta/30307-4
+1  502  ...  https://teduh.kpkt.gov.my/project-swasta/30307-3
+2  503  ...  https://teduh.kpkt.gov.my/project-swasta/30307-2
+3  504  ...  https://teduh.kpkt.gov.my/project-swasta/30307-1
+4  505  ...  https://teduh.kpkt.gov.my/project-swasta/30306-4
+5  506  ...  https://teduh.kpkt.gov.my/project-swasta/30306-3
+6  507  ...  https://teduh.kpkt.gov.my/project-swasta/30306-2
+7  508  ...  https://teduh.kpkt.gov.my/project-swasta/30306-1
+8  509  ...  https://teduh.kpkt.gov.my/project-swasta/30305-1
+9  510  ...  https://teduh.kpkt.gov.my/project-swasta/30304-1
+
+[10 rows x 11 columns]
+[2025-03-28T03:29:49.558+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250328_batch_3_pages_21_30.csv
+[2025-03-28T03:29:49.677+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250328_batch_3_pages_21_30.csv to minio://construction-web-scraping/teduh/construction_20250328_batch_3_pages_21_30.csv
+[2025-03-28T03:29:49.679+0000] {logging_mixin.py:190} INFO - Batch 3 processed with 250 rows.
+[2025-03-28T03:29:49.703+0000] {logging_mixin.py:190} INFO - Processing batch 4: pages 31 to 40
+[2025-03-28T03:29:49.706+0000] {logging_mixin.py:190} INFO - Scraping page 31...
+[2025-03-28T03:30:07.086+0000] {logging_mixin.py:190} INFO - Scraping page 32...
+[2025-03-28T03:30:24.219+0000] {logging_mixin.py:190} INFO - Scraping page 33...
+[2025-03-28T03:30:40.765+0000] {logging_mixin.py:190} INFO - Scraping page 34...
+[2025-03-28T03:30:58.023+0000] {logging_mixin.py:190} INFO - Scraping page 35...
+[2025-03-28T03:31:15.917+0000] {logging_mixin.py:190} INFO - Scraping page 36...
+[2025-03-28T03:31:33.950+0000] {logging_mixin.py:190} INFO - Scraping page 37...
+[2025-03-28T03:31:49.933+0000] {logging_mixin.py:190} INFO - Scraping page 38...
+[2025-03-28T03:32:07.343+0000] {logging_mixin.py:190} INFO - Scraping page 39...
+[2025-03-28T03:32:24.946+0000] {logging_mixin.py:190} INFO - Scraping page 40...
+[2025-03-28T03:32:42.596+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-28T03:32:42.613+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  751  ...  https://teduh.kpkt.gov.my/project-swasta/30101-7
+1  752  ...  https://teduh.kpkt.gov.my/project-swasta/30101-6
+2  753  ...  https://teduh.kpkt.gov.my/project-swasta/30101-5
+3  754  ...  https://teduh.kpkt.gov.my/project-swasta/30101-4
+4  755  ...  https://teduh.kpkt.gov.my/project-swasta/30101-3
+5  756  ...  https://teduh.kpkt.gov.my/project-swasta/30101-2
+6  757  ...  https://teduh.kpkt.gov.my/project-swasta/30101-1
+7  758  ...  https://teduh.kpkt.gov.my/project-swasta/30100-3
+8  759  ...  https://teduh.kpkt.gov.my/project-swasta/30100-2
+9  760  ...  https://teduh.kpkt.gov.my/project-swasta/30100-1
+
+[10 rows x 11 columns]
+[2025-03-28T03:32:42.617+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250328_batch_4_pages_31_40.csv
+[2025-03-28T03:32:42.665+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250328_batch_4_pages_31_40.csv to minio://construction-web-scraping/teduh/construction_20250328_batch_4_pages_31_40.csv
+[2025-03-28T03:32:42.667+0000] {logging_mixin.py:190} INFO - Batch 4 processed with 250 rows.
+[2025-03-28T03:32:42.681+0000] {logging_mixin.py:190} INFO - Processing batch 5: pages 41 to 50
+[2025-03-28T03:32:42.683+0000] {logging_mixin.py:190} INFO - Scraping page 41...
+[2025-03-28T03:33:01.863+0000] {logging_mixin.py:190} INFO - Scraping page 42...
+[2025-03-28T03:33:20.775+0000] {logging_mixin.py:190} INFO - Scraping page 43...
+[2025-03-28T03:33:38.645+0000] {logging_mixin.py:190} INFO - Scraping page 44...
+[2025-03-28T03:33:55.356+0000] {logging_mixin.py:190} INFO - Scraping page 45...
+[2025-03-28T03:34:12.132+0000] {logging_mixin.py:190} INFO - Scraping page 46...
+[2025-03-28T03:34:31.848+0000] {logging_mixin.py:190} INFO - Scraping page 47...
+[2025-03-28T03:34:51.037+0000] {logging_mixin.py:190} INFO - Scraping page 48...
+[2025-03-28T03:35:08.796+0000] {logging_mixin.py:190} INFO - Scraping page 49...
+[2025-03-28T03:35:26.606+0000] {logging_mixin.py:190} INFO - Scraping page 50...
+[2025-03-28T03:35:44.591+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-28T03:35:44.686+0000] {logging_mixin.py:190} INFO -     Bil  ...                                  RINGKASAN PROJEK
+0  1001  ...  https://teduh.kpkt.gov.my/project-swasta/20182-1
+1  1002  ...  https://teduh.kpkt.gov.my/project-swasta/20181-3
+2  1003  ...  https://teduh.kpkt.gov.my/project-swasta/20181-2
+3  1004  ...  https://teduh.kpkt.gov.my/project-swasta/20181-1
+4  1005  ...  https://teduh.kpkt.gov.my/project-swasta/20180-1
+5  1006  ...  https://teduh.kpkt.gov.my/project-swasta/20179-1
+6  1007  ...  https://teduh.kpkt.gov.my/project-swasta/20178-2
+7  1008  ...  https://teduh.kpkt.gov.my/project-swasta/20178-1
+8  1009  ...  https://teduh.kpkt.gov.my/project-swasta/20177-1
+9  1010  ...  https://teduh.kpkt.gov.my/project-swasta/20176-1
+
+[10 rows x 11 columns]
+[2025-03-28T03:35:44.692+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250328_batch_5_pages_41_50.csv
+[2025-03-28T03:35:45.308+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250328_batch_5_pages_41_50.csv to minio://construction-web-scraping/teduh/construction_20250328_batch_5_pages_41_50.csv
+[2025-03-28T03:35:45.311+0000] {logging_mixin.py:190} INFO - Batch 5 processed with 250 rows.
+[2025-03-28T03:35:45.341+0000] {logging_mixin.py:190} INFO - Processing batch 6: pages 51 to 60
+[2025-03-28T03:35:45.345+0000] {logging_mixin.py:190} INFO - Scraping page 51...
+[2025-03-28T03:36:02.858+0000] {logging_mixin.py:190} INFO - Scraping page 52...
+[2025-03-28T03:36:20.270+0000] {logging_mixin.py:190} INFO - Scraping page 53...
+[2025-03-28T03:36:38.028+0000] {logging_mixin.py:190} INFO - Scraping page 54...
+[2025-03-28T03:36:56.619+0000] {logging_mixin.py:190} INFO - Scraping page 55...
+[2025-03-28T03:37:14.066+0000] {logging_mixin.py:190} INFO - Scraping page 56...
+[2025-03-28T03:37:27.850+0000] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-03-28T03:37:27.886+0000] {process_utils.py:132} INFO - Sending 15 to group 23360. PIDs of all processes in the group: [23360]
+[2025-03-28T03:37:27.910+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 23360
+[2025-03-28T03:37:28.098+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-03-28T03:37:28.233+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.10/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/scheduler_job_runner.py", line 990, in _execute
+    executor.start()
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 392, in start
+    self.impl.start()
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 330, in start
+    worker.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 80, in run
+    return super().run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 211, in do_work
+    self.execute_work(key=key, command=command)
+  File "/home/***/.local/lib/python3.10/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 100, in execute_work
+    state = self._execute_work_in_fork(command)
+  File "/home/***/.local/lib/python3.10/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/executors/local_executor.py", line 142, in _execute_work_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.10/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.10/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.10/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.10/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.10/site-packages/***/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/***/.local/lib/python3.10/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/***/dags/split_web_scraping.py", line 186, in run_scraper
+    daerah, negeri, harga_min, harga_maks = scrape_additional_data(link)
+  File "/opt/***/dags/split_web_scraping.py", line 45, in scrape_additional_data
+    soup = BeautifulSoup(response.content, 'html.parser')
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/__init__.py", line 473, in __init__
+    self._feed()
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/__init__.py", line 658, in _feed
+    self.builder.feed(self.markup)
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/builder/_htmlparser.py", line 467, in feed
+    parser.feed(markup)
+  File "/usr/local/lib/python3.10/html/parser.py", line 110, in feed
+    self.goahead(0)
+  File "/usr/local/lib/python3.10/html/parser.py", line 172, in goahead
+    k = self.parse_endtag(i)
+  File "/usr/local/lib/python3.10/html/parser.py", line 420, in parse_endtag
+    self.handle_endtag(elem)
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/builder/_htmlparser.py", line 220, in handle_endtag
+    self.soup.handle_endtag(name)
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/__init__.py", line 1063, in handle_endtag
+    self._popToTag(name, nsprefix)
+  File "/home/***/.local/lib/python3.10/site-packages/bs4/__init__.py", line 968, in _popToTag
+    if name == self.ROOT_TAG_NAME:
+  File "/home/***/.local/lib/python3.10/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-03-28T03:37:28.283+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/split_web_scraping.py", line 186, in run_scraper
+    daerah, negeri, harga_min, harga_maks = scrape_additional_data(link)
+  File "/opt/airflow/dags/split_web_scraping.py", line 45, in scrape_additional_data
+    soup = BeautifulSoup(response.content, 'html.parser')
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/__init__.py", line 473, in __init__
+    self._feed()
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/__init__.py", line 658, in _feed
+    self.builder.feed(self.markup)
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/builder/_htmlparser.py", line 467, in feed
+    parser.feed(markup)
+  File "/usr/local/lib/python3.10/html/parser.py", line 110, in feed
+    self.goahead(0)
+  File "/usr/local/lib/python3.10/html/parser.py", line 172, in goahead
+    k = self.parse_endtag(i)
+  File "/usr/local/lib/python3.10/html/parser.py", line 420, in parse_endtag
+    self.handle_endtag(elem)
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/builder/_htmlparser.py", line 220, in handle_endtag
+    self.soup.handle_endtag(name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/__init__.py", line 1063, in handle_endtag
+    self._popToTag(name, nsprefix)
+  File "/home/airflow/.local/lib/python3.10/site-packages/bs4/__init__.py", line 968, in _popToTag
+    if name == self.ROOT_TAG_NAME:
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-03-28T03:37:28.315+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=split_web_scraping_v01, task_id=scrape_and_store, run_id=manual__2025-03-27T15:09:22.551183+00:00, execution_date=20250327T150922, start_date=20250328T032055, end_date=20250328T033728
+[2025-03-28T03:37:28.450+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-28T03:37:28.534+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=23360, status='terminated', exitcode=2, started='03:20:55') (23360) terminated with exit code 2
+[2025-03-28T03:37:28.538+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 143
+[2025-03-28T03:37:28.718+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-28T03:37:28.737+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: 'NoneType' object has no attribute 'twophase'
+[2025-03-28T03:37:28.748+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,46 @@
+[2025-03-27T07:02:50.113+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T07:02:50.138+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T07:02:42.810243+00:00 [queued]>
+[2025-03-27T07:02:50.149+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T07:02:42.810243+00:00 [queued]>
+[2025-03-27T07:02:50.150+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 6
+[2025-03-27T07:02:50.168+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-27 07:02:42.810243+00:00
+[2025-03-27T07:02:50.175+0000] {standard_task_runner.py:72} INFO - Started process 4855 to run task
+[2025-03-27T07:02:50.181+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'split_web_scraping_v01', 'scrape_and_store', 'manual__2025-03-27T07:02:42.810243+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/split_web_scraping.py', '--cfg-path', '/tmp/tmp7tjbwnea']
+[2025-03-27T07:02:50.185+0000] {standard_task_runner.py:105} INFO - Job 63: Subtask scrape_and_store
+[2025-03-27T07:02:50.247+0000] {task_command.py:467} INFO - Running <TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T07:02:42.810243+00:00 [running]> on host c79bd584e644
+[2025-03-27T07:02:50.351+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='split_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T07:02:42.810243+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-27T07:02:42.810243+00:00'
+[2025-03-27T07:02:50.354+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T07:02:50.376+0000] {logging_mixin.py:190} INFO - Scraping page 10...
+[2025-03-27T07:03:08.945+0000] {logging_mixin.py:190} INFO - Scraping page 11...
+[2025-03-27T07:03:26.347+0000] {logging_mixin.py:190} INFO - Scraping page 12...
+[2025-03-27T07:03:43.484+0000] {logging_mixin.py:190} INFO - Scraping page 13...
+[2025-03-27T07:04:05.299+0000] {logging_mixin.py:190} INFO - Scraping page 14...
+[2025-03-27T07:04:23.925+0000] {logging_mixin.py:190} INFO - Scraping page 15...
+[2025-03-27T07:04:49.071+0000] {logging_mixin.py:190} INFO - Scraping page 16...
+[2025-03-27T07:05:09.271+0000] {logging_mixin.py:190} INFO - Scraping page 17...
+[2025-03-27T07:05:27.668+0000] {logging_mixin.py:190} INFO - Scraping page 18...
+[2025-03-27T07:05:45.290+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30365-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30365-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca6857a890>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T07:05:58.507+0000] {logging_mixin.py:190} INFO - Scraping page 19...
+[2025-03-27T07:06:20.520+0000] {logging_mixin.py:190} INFO - Scraping page 20...
+[2025-03-27T07:06:37.993+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T07:06:38.057+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  226  ...  https://teduh.kpkt.gov.my/project-swasta/30584-1
+1  227  ...  https://teduh.kpkt.gov.my/project-swasta/30582-1
+2  228  ...  https://teduh.kpkt.gov.my/project-swasta/30581-1
+3  229  ...  https://teduh.kpkt.gov.my/project-swasta/30580-1
+4  230  ...  https://teduh.kpkt.gov.my/project-swasta/30578-1
+5  231  ...  https://teduh.kpkt.gov.my/project-swasta/30577-1
+6  232  ...  https://teduh.kpkt.gov.my/project-swasta/30576-1
+7  233  ...  https://teduh.kpkt.gov.my/project-swasta/30575-1
+8  234  ...  https://teduh.kpkt.gov.my/project-swasta/30574-1
+9  235  ...  https://teduh.kpkt.gov.my/project-swasta/30573-1
+
+[10 rows x 11 columns]
+[2025-03-27T07:06:38.071+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_10_20.csv
+[2025-03-27T07:06:38.137+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_10_20.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_10_20.csv
+[2025-03-27T07:06:38.139+0000] {logging_mixin.py:190} INFO - Scraping and upload done!
+[2025-03-27T07:06:38.141+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-27T07:06:38.158+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T07:06:38.159+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=split_web_scraping_v01, task_id=scrape_and_store, run_id=manual__2025-03-27T07:02:42.810243+00:00, execution_date=20250327T070242, start_date=20250327T070250, end_date=20250327T070638
+[2025-03-27T07:06:38.230+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-27T07:06:38.246+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T07:06:38.250+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

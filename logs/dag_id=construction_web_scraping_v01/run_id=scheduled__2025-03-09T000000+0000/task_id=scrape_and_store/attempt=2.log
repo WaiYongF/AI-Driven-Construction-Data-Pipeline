@@ -1,0 +1,583 @@
+[2025-03-27T04:13:44.949+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T04:13:44.980+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:13:44.998+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:13:45.001+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 6
+[2025-03-27T04:13:45.035+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T04:13:45.052+0000] {standard_task_runner.py:72} INFO - Started process 215 to run task
+[2025-03-27T04:13:45.064+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmpyw8gb_nr']
+[2025-03-27T04:13:45.071+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask scrape_and_store
+[2025-03-27T04:13:45.160+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T04:13:45.342+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T04:13:45.351+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T04:13:45.381+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T04:13:59.678+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T04:14:15.904+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T04:14:35.521+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T04:14:50.180+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T04:15:03.642+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T04:15:03.701+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T04:15:03.732+0000] {logging_mixin.py:190} INFO - SQL dump created: /tmp/teduh_dump.sql
+[2025-03-27T04:15:03.733+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 255, in run_scraper
+    client = create_minio_client()
+NameError: name 'create_minio_client' is not defined
+[2025-03-27T04:15:03.752+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T041344, end_date=20250327T041503
+[2025-03-27T04:15:03.788+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T04:15:03.789+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 11 for task scrape_and_store (name 'create_minio_client' is not defined; 215)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 255, in run_scraper
+    client = create_minio_client()
+NameError: name 'create_minio_client' is not defined
+[2025-03-27T04:15:03.815+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-27T04:15:03.841+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T04:15:03.844+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-27T04:36:14.562+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T04:36:14.586+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:36:14.597+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:36:14.598+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 7
+[2025-03-27T04:36:14.617+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T04:36:14.624+0000] {standard_task_runner.py:72} INFO - Started process 810 to run task
+[2025-03-27T04:36:14.629+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmpw8xujh16']
+[2025-03-27T04:36:14.633+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask scrape_and_store
+[2025-03-27T04:36:14.695+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T04:36:14.801+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T04:36:14.803+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T04:36:14.823+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T04:36:28.344+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T04:36:42.936+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T04:37:01.699+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T04:37:15.598+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T04:37:29.257+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T04:37:29.287+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T04:37:29.316+0000] {logging_mixin.py:190} INFO - SQL dump created: /tmp/teduh_dump.sql
+[2025-03-27T04:37:29.319+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64790>: Failed to establish a new connection: [Errno 111] Connection refused')': /construction-web-scraping?location=
+[2025-03-27T04:37:29.722+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64400>: Failed to establish a new connection: [Errno 111] Connection refused')': /construction-web-scraping?location=
+[2025-03-27T04:37:30.526+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64550>: Failed to establish a new connection: [Errno 111] Connection refused')': /construction-web-scraping?location=
+[2025-03-27T04:37:32.129+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d642b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /construction-web-scraping?location=
+[2025-03-27T04:37:35.335+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d643a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /construction-web-scraping?location=
+[2025-03-27T04:37:35.338+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fca68d64e80>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 266, in run_scraper
+    found = client.bucket_exists(MINIO_BUCKET)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 662, in bucket_exists
+    self._execute("HEAD", bucket_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 413, in _execute
+    region = self._get_region(bucket_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 470, in _get_region
+    response = self._url_open(
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 279, in _url_open
+    response = self._http.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=9000): Max retries exceeded with url: /construction-web-scraping?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64e80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-03-27T04:37:35.358+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T043614, end_date=20250327T043735
+[2025-03-27T04:37:35.394+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T04:37:35.395+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 25 for task scrape_and_store (HTTPConnectionPool(host='127.0.0.1', port=9000): Max retries exceeded with url: /construction-web-scraping?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64e80>: Failed to establish a new connection: [Errno 111] Connection refused')); 810)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fca68d64e80>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 266, in run_scraper
+    found = client.bucket_exists(MINIO_BUCKET)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 662, in bucket_exists
+    self._execute("HEAD", bucket_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 413, in _execute
+    region = self._get_region(bucket_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 470, in _get_region
+    response = self._url_open(
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 279, in _url_open
+    response = self._http.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=9000): Max retries exceeded with url: /construction-web-scraping?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca68d64e80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-03-27T04:37:35.440+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-27T04:37:35.492+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T04:37:35.496+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-27T06:01:21.387+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T06:01:21.682+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T06:01:21.698+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T06:01:21.700+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 7
+[2025-03-27T06:01:21.725+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T06:01:21.731+0000] {standard_task_runner.py:72} INFO - Started process 2894 to run task
+[2025-03-27T06:01:21.738+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmpsw8vwz8r']
+[2025-03-27T06:01:21.741+0000] {standard_task_runner.py:105} INFO - Job 38: Subtask scrape_and_store
+[2025-03-27T06:01:21.806+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T06:01:21.910+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T06:01:21.912+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T06:01:21.933+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T06:01:37.039+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T06:01:37.063+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T06:01:37.069+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327.csv
+[2025-03-27T06:01:37.133+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327.csv to minio://construction-web-scraping/teduh/teduh_dump.csv
+[2025-03-27T06:01:37.135+0000] {logging_mixin.py:190} INFO - Scraping and upload done!
+[2025-03-27T06:01:37.136+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-27T06:01:37.151+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T06:01:37.152+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T060121, end_date=20250327T060137
+[2025-03-27T06:01:37.252+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-27T06:01:37.276+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T06:01:37.279+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-27T06:15:24.248+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T06:15:24.270+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T06:15:24.280+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T06:15:24.281+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 7
+[2025-03-27T06:15:24.302+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T06:15:24.307+0000] {standard_task_runner.py:72} INFO - Started process 3307 to run task
+[2025-03-27T06:15:24.311+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmphpu31sep']
+[2025-03-27T06:15:24.315+0000] {standard_task_runner.py:105} INFO - Job 47: Subtask scrape_and_store
+[2025-03-27T06:15:24.374+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T06:15:24.475+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T06:15:24.477+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T06:15:24.495+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T06:15:44.201+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30884-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30884-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68cb0130>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T06:15:49.963+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T06:15:50.009+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T06:15:50.013+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327.csv
+[2025-03-27T06:15:50.034+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 257, in run_scraper
+    object_name=MINIO_OBJECT,
+NameError: name 'MINIO_OBJECT' is not defined
+[2025-03-27T06:15:50.055+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T061524, end_date=20250327T061550
+[2025-03-27T06:15:50.096+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T06:15:50.098+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 47 for task scrape_and_store (name 'MINIO_OBJECT' is not defined; 3307)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 257, in run_scraper
+    object_name=MINIO_OBJECT,
+NameError: name 'MINIO_OBJECT' is not defined
+[2025-03-27T06:15:50.129+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-27T06:15:50.153+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T06:15:50.156+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-27T08:57:37.092+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T08:57:37.121+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T08:57:37.133+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T08:57:37.134+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 6
+[2025-03-27T08:57:37.154+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T08:57:37.160+0000] {standard_task_runner.py:72} INFO - Started process 7454 to run task
+[2025-03-27T08:57:37.167+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmpz5jqwgw6']
+[2025-03-27T08:57:37.172+0000] {standard_task_runner.py:105} INFO - Job 73: Subtask scrape_and_store
+[2025-03-27T08:57:37.697+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T08:57:37.820+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T08:57:37.823+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T08:57:37.838+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T08:57:58.720+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T08:58:20.153+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T08:58:42.030+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T08:59:03.116+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T08:59:21.623+0000] {logging_mixin.py:190} INFO - Scraping page 6...
+[2025-03-27T08:59:39.710+0000] {logging_mixin.py:190} INFO - Scraping page 7...
+[2025-03-27T09:00:00.904+0000] {logging_mixin.py:190} INFO - Scraping page 8...
+[2025-03-27T09:00:28.254+0000] {logging_mixin.py:190} INFO - Scraping page 9...
+[2025-03-27T09:01:03.633+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30592-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30592-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca689e9780>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:01:07.988+0000] {logging_mixin.py:190} INFO - Scraping page 10...
+[2025-03-27T09:01:25.208+0000] {logging_mixin.py:190} INFO - Scraping page 11...
+[2025-03-27T09:01:50.709+0000] {logging_mixin.py:190} INFO - Scraping page 12...
+[2025-03-27T09:02:13.034+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30517-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30517-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca6823da80>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:02:23.763+0000] {logging_mixin.py:190} INFO - Scraping page 13...
+[2025-03-27T09:02:54.915+0000] {logging_mixin.py:190} INFO - Scraping page 14...
+[2025-03-27T09:03:12.440+0000] {logging_mixin.py:190} INFO - Scraping page 15...
+[2025-03-27T09:03:29.673+0000] {logging_mixin.py:190} INFO - Scraping page 16...
+[2025-03-27T09:03:47.296+0000] {logging_mixin.py:190} INFO - Scraping page 17...
+[2025-03-27T09:04:04.227+0000] {logging_mixin.py:190} INFO - Scraping page 18...
+[2025-03-27T09:04:22.333+0000] {logging_mixin.py:190} INFO - Scraping page 19...
+[2025-03-27T09:04:38.343+0000] {logging_mixin.py:190} INFO - Scraping page 20...
+[2025-03-27T09:04:54.382+0000] {logging_mixin.py:190} INFO - Scraping page 21...
+[2025-03-27T09:05:12.147+0000] {logging_mixin.py:190} INFO - Scraping page 22...
+[2025-03-27T09:05:31.058+0000] {logging_mixin.py:190} INFO - Scraping page 23...
+[2025-03-27T09:05:49.579+0000] {logging_mixin.py:190} INFO - Scraping page 24...
+[2025-03-27T09:06:05.961+0000] {logging_mixin.py:190} INFO - Scraping page 25...
+[2025-03-27T09:06:24.645+0000] {logging_mixin.py:190} INFO - Scraping page 26...
+[2025-03-27T09:06:42.859+0000] {logging_mixin.py:190} INFO - Scraping page 27...
+[2025-03-27T09:07:00.147+0000] {logging_mixin.py:190} INFO - Scraping page 28...
+[2025-03-27T09:07:18.615+0000] {logging_mixin.py:190} INFO - Scraping page 29...
+[2025-03-27T09:07:38.130+0000] {logging_mixin.py:190} INFO - Scraping page 30...
+[2025-03-27T09:07:56.203+0000] {logging_mixin.py:190} INFO - Scraping page 31...
+[2025-03-27T09:08:14.996+0000] {logging_mixin.py:190} INFO - Scraping page 32...
+[2025-03-27T09:08:33.221+0000] {logging_mixin.py:190} INFO - Scraping page 33...
+[2025-03-27T09:08:53.987+0000] {logging_mixin.py:190} INFO - Scraping page 34...
+[2025-03-27T09:09:12.481+0000] {logging_mixin.py:190} INFO - Scraping page 35...
+[2025-03-27T09:09:32.243+0000] {logging_mixin.py:190} INFO - Scraping page 36...
+[2025-03-27T09:09:52.319+0000] {logging_mixin.py:190} INFO - Scraping page 37...
+[2025-03-27T09:10:14.733+0000] {logging_mixin.py:190} INFO - Scraping page 38...
+[2025-03-27T09:10:32.925+0000] {logging_mixin.py:190} INFO - Scraping page 39...
+[2025-03-27T09:10:57.676+0000] {logging_mixin.py:190} INFO - Scraping page 40...
+[2025-03-27T09:11:47.899+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20181-3: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20181-3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68f82440>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:11:52.654+0000] {logging_mixin.py:190} INFO - Scraping page 41...
+[2025-03-27T09:12:24.324+0000] {logging_mixin.py:190} INFO - Scraping page 42...
+[2025-03-27T09:12:50.558+0000] {logging_mixin.py:190} INFO - Scraping page 43...
+[2025-03-27T09:13:18.430+0000] {logging_mixin.py:190} INFO - Scraping page 44...
+[2025-03-27T09:14:16.644+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20120-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20120-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca685fbcd0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:14:21.712+0000] {logging_mixin.py:190} INFO - Scraping page 45...
+[2025-03-27T09:14:35.952+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20116-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20116-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca6886fdf0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:15:01.804+0000] {logging_mixin.py:190} INFO - Scraping page 46...
+[2025-03-27T09:15:34.380+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/20094-4: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/20094-4 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68b5ec80>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:15:55.563+0000] {logging_mixin.py:190} INFO - Scraping page 47...
+[2025-03-27T09:16:18.965+0000] {logging_mixin.py:190} INFO - Scraping page 48...
+[2025-03-27T09:16:48.626+0000] {logging_mixin.py:190} INFO - Scraping page 49...
+[2025-03-27T09:17:06.738+0000] {logging_mixin.py:190} INFO - Scraping page 50...
+[2025-03-27T09:17:24.289+0000] {logging_mixin.py:190} INFO - Scraping page 51...
+[2025-03-27T09:17:41.089+0000] {logging_mixin.py:190} INFO - Scraping page 52...
+[2025-03-27T09:17:57.888+0000] {logging_mixin.py:190} INFO - Scraping page 53...
+[2025-03-27T09:18:14.184+0000] {logging_mixin.py:190} INFO - Scraping page 54...
+[2025-03-27T09:18:30.130+0000] {logging_mixin.py:190} INFO - Scraping page 55...
+[2025-03-27T09:18:53.876+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19952-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19952-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca688229b0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:18:55.660+0000] {logging_mixin.py:190} INFO - Scraping page 56...
+[2025-03-27T09:19:19.556+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19936-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19936-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68ca1030>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:19:20.968+0000] {logging_mixin.py:190} INFO - Scraping page 57...
+[2025-03-27T09:19:36.397+0000] {logging_mixin.py:190} INFO - Scraping page 58...
+[2025-03-27T09:19:52.194+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19917-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19917-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68d0c970>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:20:01.791+0000] {logging_mixin.py:190} INFO - Scraping page 59...
+[2025-03-27T09:20:17.091+0000] {logging_mixin.py:190} INFO - Scraping page 60...
+[2025-03-27T09:20:35.438+0000] {logging_mixin.py:190} INFO - Scraping page 61...
+[2025-03-27T09:20:52.523+0000] {logging_mixin.py:190} INFO - Scraping page 62...
+[2025-03-27T09:21:11.314+0000] {logging_mixin.py:190} INFO - Scraping page 63...
+[2025-03-27T09:21:33.116+0000] {logging_mixin.py:190} INFO - Scraping page 64...
+[2025-03-27T09:21:51.090+0000] {logging_mixin.py:190} INFO - Scraping page 65...
+[2025-03-27T09:22:07.648+0000] {logging_mixin.py:190} INFO - Scraping page 66...
+[2025-03-27T09:22:31.337+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19797-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19797-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca689e78b0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:22:40.042+0000] {logging_mixin.py:190} INFO - Scraping page 67...
+[2025-03-27T09:22:57.527+0000] {logging_mixin.py:190} INFO - Scraping page 68...
+[2025-03-27T09:23:17.361+0000] {logging_mixin.py:190} INFO - Scraping page 69...
+[2025-03-27T09:23:45.330+0000] {logging_mixin.py:190} INFO - Scraping page 70...
+[2025-03-27T09:24:12.119+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19740-6: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19740-6 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68a29030>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T09:24:16.435+0000] {logging_mixin.py:190} INFO - Scraping page 71...
+[2025-03-27T09:24:33.241+0000] {logging_mixin.py:190} INFO - Scraping page 72...
+[2025-03-27T09:24:49.987+0000] {logging_mixin.py:190} INFO - Scraping page 73...
+[2025-03-27T09:25:09.764+0000] {logging_mixin.py:190} INFO - Scraping page 74...
+[2025-03-27T09:25:36.841+0000] {logging_mixin.py:190} INFO - Scraping page 75...
+[2025-03-27T09:25:56.227+0000] {logging_mixin.py:190} INFO - Scraping page 76...
+[2025-03-27T09:26:12.267+0000] {logging_mixin.py:190} INFO - Scraping page 77...
+[2025-03-27T09:26:28.483+0000] {logging_mixin.py:190} INFO - Scraping page 78...
+[2025-03-27T09:27:07.734+0000] {logging_mixin.py:190} INFO - Scraping page 79...
+[2025-03-27T09:27:37.713+0000] {timeout.py:68} ERROR - Process timed out, PID: 7454
+[2025-03-27T09:27:37.736+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 183, in run_scraper
+    daerah, negeri, harga_min, harga_maks = scrape_additional_data(link)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 45, in scrape_additional_data
+    response = requests.get(link, timeout=10)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: Timeout, PID: 7454
+[2025-03-27T09:27:37.757+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T085737, end_date=20250327T092737
+[2025-03-27T09:27:37.801+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T09:27:37.856+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 2
+[2025-03-27T09:27:37.883+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T09:27:37.889+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

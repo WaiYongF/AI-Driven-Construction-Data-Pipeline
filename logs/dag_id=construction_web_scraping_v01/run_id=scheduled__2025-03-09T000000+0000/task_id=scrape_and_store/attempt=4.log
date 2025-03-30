@@ -1,0 +1,96 @@
+[2025-03-27T04:26:25.600+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T04:26:25.618+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:26:25.628+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [queued]>
+[2025-03-27T04:26:25.629+0000] {taskinstance.py:2867} INFO - Starting attempt 4 of 6
+[2025-03-27T04:26:25.645+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-09 00:00:00+00:00
+[2025-03-27T04:26:25.650+0000] {standard_task_runner.py:72} INFO - Started process 548 to run task
+[2025-03-27T04:26:25.655+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'construction_web_scraping_v01', 'scrape_and_store', 'scheduled__2025-03-09T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/construction_web_scraping.py', '--cfg-path', '/tmp/tmpu4312f6_']
+[2025-03-27T04:26:25.666+0000] {standard_task_runner.py:105} INFO - Job 19: Subtask scrape_and_store
+[2025-03-27T04:26:25.742+0000] {task_command.py:467} INFO - Running <TaskInstance: construction_web_scraping_v01.scrape_and_store scheduled__2025-03-09T00:00:00+00:00 [running]> on host c79bd584e644
+[2025-03-27T04:26:25.845+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='construction_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T00:00:00+00:00'
+[2025-03-27T04:26:25.846+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T04:26:25.866+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T04:26:39.862+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T04:26:55.102+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T04:27:14.099+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T04:27:28.088+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T04:27:41.725+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T04:27:41.765+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T04:27:41.797+0000] {logging_mixin.py:190} INFO - SQL dump created: /tmp/teduh_dump.sql
+[2025-03-27T04:27:41.799+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 255, in run_scraper
+    client = create_minio_client()
+NameError: name 'create_minio_client' is not defined
+[2025-03-27T04:27:41.816+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=construction_web_scraping_v01, task_id=scrape_and_store, run_id=scheduled__2025-03-09T00:00:00+00:00, execution_date=20250309T000000, start_date=20250327T042625, end_date=20250327T042741
+[2025-03-27T04:27:41.849+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T04:27:41.851+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 19 for task scrape_and_store (name 'create_minio_client' is not defined; 548)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/construction_web_scraping.py", line 255, in run_scraper
+    client = create_minio_client()
+NameError: name 'create_minio_client' is not defined
+[2025-03-27T04:27:41.873+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-27T04:27:41.897+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T04:27:41.901+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

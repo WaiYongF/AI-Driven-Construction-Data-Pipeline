@@ -1,0 +1,35 @@
+[2025-03-30T02:44:58.764+0000] {processor.py:186} INFO - Started process (PID=40637) to work on /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:44:58.777+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/construction_web_scraping.py for tasks to queue
+[2025-03-30T02:44:58.781+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:44:58.780+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:45:00.897+0000] {processor.py:925} INFO - DAG(s) 'construction_web_scraping_v01' retrieved from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:45:00.924+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:45:00.923+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-30T02:45:00.953+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:45:00.952+0000] {dag.py:4180} INFO - Setting next_dagrun for construction_web_scraping_v01 to 2025-03-23 00:00:00+00:00, run_after=2025-03-30 00:00:00+00:00
+[2025-03-30T02:45:00.978+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/construction_web_scraping.py took 2.245 seconds
+[2025-03-30T02:45:32.773+0000] {processor.py:186} INFO - Started process (PID=40656) to work on /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:45:32.775+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/construction_web_scraping.py for tasks to queue
+[2025-03-30T02:45:32.776+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:45:32.776+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:45:33.672+0000] {processor.py:925} INFO - DAG(s) 'construction_web_scraping_v01' retrieved from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:45:33.852+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:45:33.852+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-30T02:45:33.879+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:45:33.879+0000] {dag.py:4180} INFO - Setting next_dagrun for construction_web_scraping_v01 to 2025-03-23 00:00:00+00:00, run_after=2025-03-30 00:00:00+00:00
+[2025-03-30T02:45:33.902+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/construction_web_scraping.py took 1.137 seconds
+[2025-03-30T02:46:04.166+0000] {processor.py:186} INFO - Started process (PID=40677) to work on /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:04.168+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/construction_web_scraping.py for tasks to queue
+[2025-03-30T02:46:04.170+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:04.169+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:05.059+0000] {processor.py:925} INFO - DAG(s) 'construction_web_scraping_v01' retrieved from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:05.089+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:05.088+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-30T02:46:05.116+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:05.116+0000] {dag.py:4180} INFO - Setting next_dagrun for construction_web_scraping_v01 to 2025-03-23 00:00:00+00:00, run_after=2025-03-30 00:00:00+00:00
+[2025-03-30T02:46:05.140+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/construction_web_scraping.py took 0.983 seconds
+[2025-03-30T02:46:35.532+0000] {processor.py:186} INFO - Started process (PID=40695) to work on /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:35.533+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/construction_web_scraping.py for tasks to queue
+[2025-03-30T02:46:35.536+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:35.535+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:37.131+0000] {processor.py:925} INFO - DAG(s) 'construction_web_scraping_v01' retrieved from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:46:37.169+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:37.168+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-30T02:46:37.218+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:46:37.217+0000] {dag.py:4180} INFO - Setting next_dagrun for construction_web_scraping_v01 to 2025-03-23 00:00:00+00:00, run_after=2025-03-30 00:00:00+00:00
+[2025-03-30T02:46:37.254+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/construction_web_scraping.py took 1.738 seconds
+[2025-03-30T02:47:07.744+0000] {processor.py:186} INFO - Started process (PID=40713) to work on /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:47:07.747+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/construction_web_scraping.py for tasks to queue
+[2025-03-30T02:47:07.750+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:47:07.749+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:47:08.738+0000] {processor.py:925} INFO - DAG(s) 'construction_web_scraping_v01' retrieved from /opt/airflow/dags/construction_web_scraping.py
+[2025-03-30T02:47:08.765+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:47:08.764+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-30T02:47:08.793+0000] {logging_mixin.py:190} INFO - [2025-03-30T02:47:08.793+0000] {dag.py:4180} INFO - Setting next_dagrun for construction_web_scraping_v01 to 2025-03-23 00:00:00+00:00, run_after=2025-03-30 00:00:00+00:00
+[2025-03-30T02:47:08.816+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/construction_web_scraping.py took 1.091 seconds

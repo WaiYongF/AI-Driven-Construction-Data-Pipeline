@@ -1,0 +1,320 @@
+[2025-03-27T15:44:26.600+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-27T15:44:26.638+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [queued]>
+[2025-03-27T15:44:26.660+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [queued]>
+[2025-03-27T15:44:26.662+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 6
+[2025-03-27T15:44:26.685+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): scrape_and_store> on 2025-03-27 15:09:22.551183+00:00
+[2025-03-27T15:44:26.692+0000] {standard_task_runner.py:72} INFO - Started process 19039 to run task
+[2025-03-27T15:44:26.698+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'split_web_scraping_v01', 'scrape_and_store', 'manual__2025-03-27T15:09:22.551183+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/split_web_scraping.py', '--cfg-path', '/tmp/tmpwx6bhap4']
+[2025-03-27T15:44:26.702+0000] {standard_task_runner.py:105} INFO - Job 78: Subtask scrape_and_store
+[2025-03-27T15:44:26.773+0000] {task_command.py:467} INFO - Running <TaskInstance: split_web_scraping_v01.scrape_and_store manual__2025-03-27T15:09:22.551183+00:00 [running]> on host c79bd584e644
+[2025-03-27T15:44:26.873+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='waiyong' AIRFLOW_CTX_DAG_ID='split_web_scraping_v01' AIRFLOW_CTX_TASK_ID='scrape_and_store' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T15:09:22.551183+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-27T15:09:22.551183+00:00'
+[2025-03-27T15:44:26.875+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-27T15:44:26.902+0000] {logging_mixin.py:190} INFO - Processing batch 1: pages 1 to 10
+[2025-03-27T15:44:26.903+0000] {logging_mixin.py:190} INFO - Scraping page 1...
+[2025-03-27T15:44:43.103+0000] {logging_mixin.py:190} INFO - Scraping page 2...
+[2025-03-27T15:45:04.532+0000] {logging_mixin.py:190} INFO - Scraping page 3...
+[2025-03-27T15:45:28.018+0000] {logging_mixin.py:190} INFO - Scraping page 4...
+[2025-03-27T15:45:55.703+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30743-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30743-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68e22770>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:45:58.337+0000] {logging_mixin.py:190} INFO - Scraping page 5...
+[2025-03-27T15:46:18.864+0000] {logging_mixin.py:190} INFO - Scraping page 6...
+[2025-03-27T15:46:43.342+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30685-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30685-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68b13850>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:46:48.257+0000] {logging_mixin.py:190} INFO - Scraping page 7...
+[2025-03-27T15:47:11.683+0000] {logging_mixin.py:190} INFO - Scraping page 8...
+[2025-03-27T15:47:34.127+0000] {logging_mixin.py:190} INFO - Scraping page 9...
+[2025-03-27T15:48:05.416+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30587-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30587-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca685dbbe0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:48:06.419+0000] {logging_mixin.py:190} INFO - Scraping page 10...
+[2025-03-27T15:48:21.055+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30581-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30581-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68db75b0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:48:53.006+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30567-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Read timed out. (read timeout=10)
+[2025-03-27T15:49:15.437+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T15:49:15.454+0000] {logging_mixin.py:190} INFO -   Bil  ...                                  RINGKASAN PROJEK
+0   1  ...  https://teduh.kpkt.gov.my/project-swasta/30969-1
+1   2  ...  https://teduh.kpkt.gov.my/project-swasta/30946-1
+2   3  ...  https://teduh.kpkt.gov.my/project-swasta/30937-1
+3   4  ...  https://teduh.kpkt.gov.my/project-swasta/30921-1
+4   5  ...  https://teduh.kpkt.gov.my/project-swasta/30920-1
+5   6  ...  https://teduh.kpkt.gov.my/project-swasta/30914-1
+6   7  ...  https://teduh.kpkt.gov.my/project-swasta/30913-1
+7   8  ...  https://teduh.kpkt.gov.my/project-swasta/30909-1
+8   9  ...  https://teduh.kpkt.gov.my/project-swasta/30908-1
+9  10  ...  https://teduh.kpkt.gov.my/project-swasta/30902-1
+
+[10 rows x 11 columns]
+[2025-03-27T15:49:15.460+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_1_pages_1_10.csv
+[2025-03-27T15:49:15.539+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_1_pages_1_10.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_1_pages_1_10.csv
+[2025-03-27T15:49:15.540+0000] {logging_mixin.py:190} INFO - Batch 1 processed with 250 rows.
+[2025-03-27T15:49:15.556+0000] {logging_mixin.py:190} INFO - Processing batch 2: pages 11 to 20
+[2025-03-27T15:49:15.557+0000] {logging_mixin.py:190} INFO - Scraping page 11...
+[2025-03-27T15:49:28.811+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30557-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30557-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68db5780>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:49:42.422+0000] {logging_mixin.py:190} INFO - Scraping page 12...
+[2025-03-27T15:50:05.055+0000] {logging_mixin.py:190} INFO - Scraping page 13...
+[2025-03-27T15:50:27.294+0000] {logging_mixin.py:190} INFO - Scraping page 14...
+[2025-03-27T15:50:45.439+0000] {logging_mixin.py:190} INFO - Scraping page 15...
+[2025-03-27T15:51:01.723+0000] {logging_mixin.py:190} INFO - Scraping page 16...
+[2025-03-27T15:51:19.257+0000] {logging_mixin.py:190} INFO - Scraping page 17...
+[2025-03-27T15:51:38.988+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30382-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30382-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68fd0a90>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:51:52.162+0000] {logging_mixin.py:190} INFO - Scraping page 18...
+[2025-03-27T15:52:16.241+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30357-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30357-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca686fb610>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:52:51.981+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30351-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Read timed out. (read timeout=10)
+[2025-03-27T15:53:08.630+0000] {logging_mixin.py:190} INFO - Scraping page 19...
+[2025-03-27T15:53:48.773+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30331-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30331-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68c61ba0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:53:51.714+0000] {logging_mixin.py:190} INFO - Scraping page 20...
+[2025-03-27T15:54:21.271+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30311-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30311-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68c62ce0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:54:32.788+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30310-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Read timed out. (read timeout=10)
+[2025-03-27T15:54:54.301+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30309-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Read timed out. (read timeout=10)
+[2025-03-27T15:55:08.322+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30308-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30308-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68c62d70>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:55:18.226+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T15:55:18.242+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  251  ...  https://teduh.kpkt.gov.my/project-swasta/30557-1
+1  252  ...  https://teduh.kpkt.gov.my/project-swasta/30555-1
+2  253  ...  https://teduh.kpkt.gov.my/project-swasta/30552-2
+3  254  ...  https://teduh.kpkt.gov.my/project-swasta/30552-1
+4  255  ...  https://teduh.kpkt.gov.my/project-swasta/30550-1
+5  256  ...  https://teduh.kpkt.gov.my/project-swasta/30549-1
+6  257  ...  https://teduh.kpkt.gov.my/project-swasta/30548-4
+7  258  ...  https://teduh.kpkt.gov.my/project-swasta/30548-3
+8  259  ...  https://teduh.kpkt.gov.my/project-swasta/30548-2
+9  260  ...  https://teduh.kpkt.gov.my/project-swasta/30548-1
+
+[10 rows x 11 columns]
+[2025-03-27T15:55:18.245+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_2_pages_11_20.csv
+[2025-03-27T15:55:21.801+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_2_pages_11_20.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_2_pages_11_20.csv
+[2025-03-27T15:55:21.803+0000] {logging_mixin.py:190} INFO - Batch 2 processed with 250 rows.
+[2025-03-27T15:55:21.820+0000] {logging_mixin.py:190} INFO - Processing batch 3: pages 21 to 30
+[2025-03-27T15:55:21.821+0000] {logging_mixin.py:190} INFO - Scraping page 21...
+[2025-03-27T15:55:57.969+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30300-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30300-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68f5ad40>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:56:10.801+0000] {logging_mixin.py:190} INFO - Scraping page 22...
+[2025-03-27T15:56:26.878+0000] {logging_mixin.py:190} INFO - Scraping page 23...
+[2025-03-27T15:56:44.138+0000] {logging_mixin.py:190} INFO - Scraping page 24...
+[2025-03-27T15:57:00.726+0000] {logging_mixin.py:190} INFO - Scraping page 25...
+[2025-03-27T15:57:28.501+0000] {logging_mixin.py:190} INFO - Scraping page 26...
+[2025-03-27T15:57:48.482+0000] {logging_mixin.py:190} INFO - Scraping page 27...
+[2025-03-27T15:58:14.526+0000] {logging_mixin.py:190} INFO - Scraping page 28...
+[2025-03-27T15:58:31.449+0000] {logging_mixin.py:190} INFO - Scraping page 29...
+[2025-03-27T15:58:51.047+0000] {logging_mixin.py:190} INFO - Scraping page 30...
+[2025-03-27T15:59:13.168+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/30102-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/30102-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68db5db0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T15:59:17.055+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T15:59:17.074+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  501  ...  https://teduh.kpkt.gov.my/project-swasta/30306-4
+1  502  ...  https://teduh.kpkt.gov.my/project-swasta/30306-3
+2  503  ...  https://teduh.kpkt.gov.my/project-swasta/30306-2
+3  504  ...  https://teduh.kpkt.gov.my/project-swasta/30306-1
+4  505  ...  https://teduh.kpkt.gov.my/project-swasta/30305-1
+5  506  ...  https://teduh.kpkt.gov.my/project-swasta/30304-1
+6  507  ...  https://teduh.kpkt.gov.my/project-swasta/30303-1
+7  508  ...  https://teduh.kpkt.gov.my/project-swasta/30302-1
+8  509  ...  https://teduh.kpkt.gov.my/project-swasta/30301-1
+9  510  ...  https://teduh.kpkt.gov.my/project-swasta/30300-2
+
+[10 rows x 11 columns]
+[2025-03-27T15:59:17.078+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_3_pages_21_30.csv
+[2025-03-27T15:59:17.174+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_3_pages_21_30.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_3_pages_21_30.csv
+[2025-03-27T15:59:17.176+0000] {logging_mixin.py:190} INFO - Batch 3 processed with 250 rows.
+[2025-03-27T15:59:17.194+0000] {logging_mixin.py:190} INFO - Processing batch 4: pages 31 to 40
+[2025-03-27T15:59:17.196+0000] {logging_mixin.py:190} INFO - Scraping page 31...
+[2025-03-27T15:59:33.002+0000] {logging_mixin.py:190} INFO - Scraping page 32...
+[2025-03-27T15:59:51.956+0000] {logging_mixin.py:190} INFO - Scraping page 33...
+[2025-03-27T16:00:06.582+0000] {logging_mixin.py:190} INFO - Scraping page 34...
+[2025-03-27T16:00:29.295+0000] {logging_mixin.py:190} INFO - Scraping page 35...
+[2025-03-27T16:00:45.702+0000] {logging_mixin.py:190} INFO - Scraping page 36...
+[2025-03-27T16:00:59.253+0000] {logging_mixin.py:190} INFO - Scraping page 37...
+[2025-03-27T16:01:13.205+0000] {logging_mixin.py:190} INFO - Scraping page 38...
+[2025-03-27T16:01:25.991+0000] {logging_mixin.py:190} INFO - Scraping page 39...
+[2025-03-27T16:01:38.712+0000] {logging_mixin.py:190} INFO - Scraping page 40...
+[2025-03-27T16:01:51.754+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T16:01:51.769+0000] {logging_mixin.py:190} INFO -    Bil  ...                                  RINGKASAN PROJEK
+0  751  ...  https://teduh.kpkt.gov.my/project-swasta/30101-3
+1  752  ...  https://teduh.kpkt.gov.my/project-swasta/30101-2
+2  753  ...  https://teduh.kpkt.gov.my/project-swasta/30101-1
+3  754  ...  https://teduh.kpkt.gov.my/project-swasta/30100-3
+4  755  ...  https://teduh.kpkt.gov.my/project-swasta/30100-2
+5  756  ...  https://teduh.kpkt.gov.my/project-swasta/30100-1
+6  757  ...  https://teduh.kpkt.gov.my/project-swasta/30099-1
+7  758  ...  https://teduh.kpkt.gov.my/project-swasta/30097-1
+8  759  ...  https://teduh.kpkt.gov.my/project-swasta/30096-1
+9  760  ...  https://teduh.kpkt.gov.my/project-swasta/30095-1
+
+[10 rows x 11 columns]
+[2025-03-27T16:01:51.773+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_4_pages_31_40.csv
+[2025-03-27T16:01:51.847+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_4_pages_31_40.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_4_pages_31_40.csv
+[2025-03-27T16:01:51.848+0000] {logging_mixin.py:190} INFO - Batch 4 processed with 250 rows.
+[2025-03-27T16:01:51.861+0000] {logging_mixin.py:190} INFO - Processing batch 5: pages 41 to 50
+[2025-03-27T16:01:51.863+0000] {logging_mixin.py:190} INFO - Scraping page 41...
+[2025-03-27T16:02:09.101+0000] {logging_mixin.py:190} INFO - Scraping page 42...
+[2025-03-27T16:02:22.677+0000] {logging_mixin.py:190} INFO - Scraping page 43...
+[2025-03-27T16:02:36.743+0000] {logging_mixin.py:190} INFO - Scraping page 44...
+[2025-03-27T16:02:49.646+0000] {logging_mixin.py:190} INFO - Scraping page 45...
+[2025-03-27T16:03:03.566+0000] {logging_mixin.py:190} INFO - Scraping page 46...
+[2025-03-27T16:03:17.548+0000] {logging_mixin.py:190} INFO - Scraping page 47...
+[2025-03-27T16:03:34.600+0000] {logging_mixin.py:190} INFO - Scraping page 48...
+[2025-03-27T16:03:50.195+0000] {logging_mixin.py:190} INFO - Scraping page 49...
+[2025-03-27T16:04:03.685+0000] {logging_mixin.py:190} INFO - Scraping page 50...
+[2025-03-27T16:04:18.169+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T16:04:18.184+0000] {logging_mixin.py:190} INFO -     Bil  ...                                  RINGKASAN PROJEK
+0  1001  ...  https://teduh.kpkt.gov.my/project-swasta/20179-1
+1  1002  ...  https://teduh.kpkt.gov.my/project-swasta/20178-2
+2  1003  ...  https://teduh.kpkt.gov.my/project-swasta/20178-1
+3  1004  ...  https://teduh.kpkt.gov.my/project-swasta/20177-1
+4  1005  ...  https://teduh.kpkt.gov.my/project-swasta/20176-1
+5  1006  ...  https://teduh.kpkt.gov.my/project-swasta/20175-2
+6  1007  ...  https://teduh.kpkt.gov.my/project-swasta/20175-1
+7  1008  ...  https://teduh.kpkt.gov.my/project-swasta/20174-1
+8  1009  ...  https://teduh.kpkt.gov.my/project-swasta/20173-3
+9  1010  ...  https://teduh.kpkt.gov.my/project-swasta/20173-2
+
+[10 rows x 11 columns]
+[2025-03-27T16:04:18.187+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_5_pages_41_50.csv
+[2025-03-27T16:04:18.256+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_5_pages_41_50.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_5_pages_41_50.csv
+[2025-03-27T16:04:18.257+0000] {logging_mixin.py:190} INFO - Batch 5 processed with 250 rows.
+[2025-03-27T16:04:18.270+0000] {logging_mixin.py:190} INFO - Processing batch 6: pages 51 to 60
+[2025-03-27T16:04:18.272+0000] {logging_mixin.py:190} INFO - Scraping page 51...
+[2025-03-27T16:04:39.339+0000] {logging_mixin.py:190} INFO - Error processing batch 6: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta?page=51 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fca6824a6b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-03-27T16:04:39.356+0000] {logging_mixin.py:190} INFO - Processing batch 7: pages 61 to 70
+[2025-03-27T16:04:39.357+0000] {logging_mixin.py:190} INFO - Scraping page 61...
+[2025-03-27T16:04:53.340+0000] {logging_mixin.py:190} INFO - Scraping page 62...
+[2025-03-27T16:05:11.026+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19854-2: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19854-2 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68af2d10>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T16:05:15.783+0000] {logging_mixin.py:190} INFO - Scraping page 63...
+[2025-03-27T16:05:31.477+0000] {logging_mixin.py:190} INFO - Scraping page 64...
+[2025-03-27T16:05:45.851+0000] {logging_mixin.py:190} INFO - Scraping page 65...
+[2025-03-27T16:05:59.677+0000] {logging_mixin.py:190} INFO - Scraping page 66...
+[2025-03-27T16:06:22.457+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19794-9: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19794-9 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68e98640>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T16:06:23.460+0000] {logging_mixin.py:190} INFO - Scraping page 67...
+[2025-03-27T16:06:36.694+0000] {logging_mixin.py:190} INFO - Scraping page 68...
+[2025-03-27T16:06:51.948+0000] {logging_mixin.py:190} INFO - Scraping page 69...
+[2025-03-27T16:07:06.049+0000] {logging_mixin.py:190} INFO - Scraping page 70...
+[2025-03-27T16:07:26.398+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19740-3: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19740-3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca68fc88b0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T16:07:28.391+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T16:07:28.406+0000] {logging_mixin.py:190} INFO -     Bil  ...                                  RINGKASAN PROJEK
+0  1501  ...  https://teduh.kpkt.gov.my/project-swasta/19878-1
+1  1502  ...  https://teduh.kpkt.gov.my/project-swasta/19877-1
+2  1503  ...  https://teduh.kpkt.gov.my/project-swasta/19876-1
+3  1504  ...  https://teduh.kpkt.gov.my/project-swasta/19875-1
+4  1505  ...  https://teduh.kpkt.gov.my/project-swasta/19874-1
+5  1506  ...  https://teduh.kpkt.gov.my/project-swasta/19873-2
+6  1507  ...  https://teduh.kpkt.gov.my/project-swasta/19873-1
+7  1508  ...  https://teduh.kpkt.gov.my/project-swasta/19872-1
+8  1509  ...  https://teduh.kpkt.gov.my/project-swasta/19871-2
+9  1510  ...  https://teduh.kpkt.gov.my/project-swasta/19871-1
+
+[10 rows x 11 columns]
+[2025-03-27T16:07:28.410+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_7_pages_61_70.csv
+[2025-03-27T16:07:28.480+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_7_pages_61_70.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_7_pages_61_70.csv
+[2025-03-27T16:07:28.481+0000] {logging_mixin.py:190} INFO - Batch 7 processed with 250 rows.
+[2025-03-27T16:07:28.494+0000] {logging_mixin.py:190} INFO - Processing batch 8: pages 71 to 80
+[2025-03-27T16:07:28.496+0000] {logging_mixin.py:190} INFO - Scraping page 71...
+[2025-03-27T16:07:43.134+0000] {logging_mixin.py:190} INFO - Scraping page 72...
+[2025-03-27T16:07:58.200+0000] {logging_mixin.py:190} INFO - Scraping page 73...
+[2025-03-27T16:08:14.476+0000] {logging_mixin.py:190} INFO - Scraping page 74...
+[2025-03-27T16:08:30.994+0000] {logging_mixin.py:190} INFO - Scraping page 75...
+[2025-03-27T16:08:45.958+0000] {logging_mixin.py:190} INFO - Scraping page 76...
+[2025-03-27T16:09:03.106+0000] {logging_mixin.py:190} INFO - Scraping page 77...
+[2025-03-27T16:09:25.536+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19655-1: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19655-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca685ea4a0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T16:09:29.170+0000] {logging_mixin.py:190} INFO - Scraping page 78...
+[2025-03-27T16:09:49.276+0000] {logging_mixin.py:190} INFO - Scraping page 79...
+[2025-03-27T16:10:09.310+0000] {logging_mixin.py:190} INFO - Scraping page 80...
+[2025-03-27T16:10:33.828+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T16:10:33.844+0000] {logging_mixin.py:190} INFO -     Bil  ...                                   RINGKASAN PROJEK
+0  1751  ...   https://teduh.kpkt.gov.my/project-swasta/19738-1
+1  1752  ...   https://teduh.kpkt.gov.my/project-swasta/19737-3
+2  1753  ...   https://teduh.kpkt.gov.my/project-swasta/19737-2
+3  1754  ...   https://teduh.kpkt.gov.my/project-swasta/19737-1
+4  1755  ...   https://teduh.kpkt.gov.my/project-swasta/19736-1
+5  1756  ...  https://teduh.kpkt.gov.my/project-swasta/19735-16
+6  1757  ...  https://teduh.kpkt.gov.my/project-swasta/19735-15
+7  1758  ...  https://teduh.kpkt.gov.my/project-swasta/19735-14
+8  1759  ...  https://teduh.kpkt.gov.my/project-swasta/19735-13
+9  1760  ...  https://teduh.kpkt.gov.my/project-swasta/19735-12
+
+[10 rows x 11 columns]
+[2025-03-27T16:10:33.848+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_8_pages_71_80.csv
+[2025-03-27T16:10:33.912+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_8_pages_71_80.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_8_pages_71_80.csv
+[2025-03-27T16:10:33.913+0000] {logging_mixin.py:190} INFO - Batch 8 processed with 250 rows.
+[2025-03-27T16:10:33.926+0000] {logging_mixin.py:190} INFO - Processing batch 9: pages 81 to 90
+[2025-03-27T16:10:33.927+0000] {logging_mixin.py:190} INFO - Scraping page 81...
+[2025-03-27T16:10:51.494+0000] {logging_mixin.py:190} INFO - Scraping page 82...
+[2025-03-27T16:11:10.701+0000] {logging_mixin.py:190} INFO - Scraping page 83...
+[2025-03-27T16:11:27.326+0000] {logging_mixin.py:190} INFO - Scraping page 84...
+[2025-03-27T16:11:46.779+0000] {logging_mixin.py:190} INFO - Scraping page 85...
+[2025-03-27T16:12:03.295+0000] {logging_mixin.py:190} INFO - Scraping page 86...
+[2025-03-27T16:12:21.588+0000] {logging_mixin.py:190} INFO - Scraping page 87...
+[2025-03-27T16:12:39.032+0000] {logging_mixin.py:190} INFO - Scraping page 88...
+[2025-03-27T16:12:57.150+0000] {logging_mixin.py:190} INFO - Scraping page 89...
+[2025-03-27T16:13:13.929+0000] {logging_mixin.py:190} INFO - Scraping page 90...
+[2025-03-27T16:13:31.124+0000] {logging_mixin.py:190} INFO - Columns before rename: ['BIL.', 'KOD PROJEK', 'PEMAJU', 'PROJEK', 'NO. PERMIT', 'STATUS PROJEK KESELURUHAN', 'RINGKASAN PROJEK', 'Daerah Projek', 'Negeri Projek', 'Harga Minimum (RM)', 'Harga Maksimum (RM)']
+[2025-03-27T16:13:31.141+0000] {logging_mixin.py:190} INFO -     Bil  ...                                  RINGKASAN PROJEK
+0  2001  ...  https://teduh.kpkt.gov.my/project-swasta/19611-1
+1  2002  ...  https://teduh.kpkt.gov.my/project-swasta/19610-1
+2  2003  ...  https://teduh.kpkt.gov.my/project-swasta/19609-1
+3  2004  ...  https://teduh.kpkt.gov.my/project-swasta/19608-1
+4  2005  ...  https://teduh.kpkt.gov.my/project-swasta/19607-2
+5  2006  ...  https://teduh.kpkt.gov.my/project-swasta/19607-1
+6  2007  ...  https://teduh.kpkt.gov.my/project-swasta/19606-1
+7  2008  ...  https://teduh.kpkt.gov.my/project-swasta/19605-2
+8  2009  ...  https://teduh.kpkt.gov.my/project-swasta/19605-1
+9  2010  ...  https://teduh.kpkt.gov.my/project-swasta/19604-1
+
+[10 rows x 11 columns]
+[2025-03-27T16:13:31.144+0000] {logging_mixin.py:190} INFO - CSV file created: /tmp/construction_20250327_batch_9_pages_81_90.csv
+[2025-03-27T16:13:31.201+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/construction_20250327_batch_9_pages_81_90.csv to minio://construction-web-scraping/teduh/construction_20250327_batch_9_pages_81_90.csv
+[2025-03-27T16:13:31.202+0000] {logging_mixin.py:190} INFO - Batch 9 processed with 250 rows.
+[2025-03-27T16:13:31.215+0000] {logging_mixin.py:190} INFO - Processing batch 10: pages 91 to 100
+[2025-03-27T16:13:31.217+0000] {logging_mixin.py:190} INFO - Scraping page 91...
+[2025-03-27T16:13:47.108+0000] {logging_mixin.py:190} INFO - Error scraping https://teduh.kpkt.gov.my/project-swasta/19468-3: HTTPSConnectionPool(host='teduh.kpkt.gov.my', port=443): Max retries exceeded with url: /project-swasta/19468-3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca684895d0>, 'Connection to teduh.kpkt.gov.my timed out. (connect timeout=10)'))
+[2025-03-27T16:13:59.409+0000] {logging_mixin.py:190} INFO - Scraping page 92...
+[2025-03-27T16:14:17.071+0000] {logging_mixin.py:190} INFO - Scraping page 93...
+[2025-03-27T16:14:26.774+0000] {timeout.py:68} ERROR - Process timed out, PID: 19039
+[2025-03-27T16:14:26.787+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/split_web_scraping.py", line 186, in run_scraper
+    daerah, negeri, harga_min, harga_maks = scrape_additional_data(link)
+  File "/opt/airflow/dags/split_web_scraping.py", line 41, in scrape_additional_data
+    response = requests.get(link, timeout=10)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/local/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.10/socket.py", line 717, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.10/ssl.py", line 1307, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.10/ssl.py", line 1163, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: Timeout, PID: 19039
+[2025-03-27T16:14:26.801+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=split_web_scraping_v01, task_id=scrape_and_store, run_id=manual__2025-03-27T15:09:22.551183+00:00, execution_date=20250327T150922, start_date=20250327T154426, end_date=20250327T161426
+[2025-03-27T16:14:26.837+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-27T16:14:26.881+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 2
+[2025-03-27T16:14:26.905+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-27T16:14:26.908+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
